@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Riyad LAROUB Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css.css"/>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Riyad</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="html.html">Accueil</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="aboutme.html">À propos </a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="projet.html">Projets</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="competences.html">Compétences</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="cv.pdf">CV</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="contact.html">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="html.html">Accueil</a>
+                <a href="aboutme.html">À propos</a>
+                <a href="projet.html">Projets</a>
+                <a href="competences.html">Compétences</a>
+                <a href="cv.pdf">CV</a>
+                <a href="contact.html">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+        <section>
+            <div class="main-container">
+                <!-- le jour ou je mettrai la photo -->
+
+                <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
+                    <img src="main.png" alt="">  -
+                </div>
+                <!-- le jour ou je mettrai la photo -->
+                <div class="content">
+                    <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Bonjour Je suis <span>Riyad</span></h1>
+                    <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">Étudiant en informatique <span></span></div>
+                    <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">Salut ! Je m'appelle Riyad LAROUB, étudiant en informatique passionné par le développement et les nouvelles technologies. Parcourez mon portfolio pour découvrir mes différentes réalisations, mon CV et en savoir plus sur mon parcours. Merci de votre visite !</p>
+                    <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+                        <a href="https://github.com/RiyadLrb" ><i class="fa-brands fa-github"></i></a>
+
+                        <a href="https://www.linkedin.com/in/laroub-riyad"><i class="fa-brands fa-linkedin"></i></a>
+                        
+                    </div>
+                    <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init({offset:0});
+        </script>
+        <script>
+            function hamburg(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(0px)"
+            }
+            function cancel(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(-500px)"
+            }
+        </script>
+</body>
+</html>

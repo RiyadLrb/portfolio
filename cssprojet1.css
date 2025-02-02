@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173));
+    color: #333;
+}
+
+header {
+    background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173));
+    color: #6d4300;
+    text-align: center;
+    padding: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style: none; /* Supprime les puces par défaut */
+    padding: 0;
+}
+
+ul li::before {
+    content: "➜";  /* Flèche personnalisée */
+    color: black; /* Couleur de la flèche */
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173));
+    color: #6d4300;
+    margin-top: 20px;
+}
+
+
+
+
+pre {
+    background-color: #272822; /* Fond sombre */
+    color: #f8f8f2; /* Texte clair */
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto; /* Scroll horizontal si le code est trop long */
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+code {
+    font-size: 14px;
+    display: block;
+}

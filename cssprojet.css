@@ -1,0 +1,58 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(to right, #fff, #fed7ad);
+    color: #000000;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #6d4300;
+    text-align: center;
+}
+
+.project {
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.project h2 {
+    font-size: 1.8rem;
+    color: #000000;
+}
+
+.project p {
+    font-size: 1.2rem;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style des liens */
+a {
+    color: #6d4300; /* Couleur des liens */
+    text-decoration: none; /* Enlève le soulignement */
+}
+
+a:hover {
+    color: #b74b4b; /* Couleur au survol */
+    text-decoration: underline; /* Ajoute un soulignement au survol */
+}
+
+p{
+    text-align: justify;
+}

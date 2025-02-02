@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Base de Données</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cssprojet1.css">
+</head>
+<body>
+    <header>
+        <h1>Création d'une Base de Données</h1>
+        <h2>Climate-related Disasters Frequency</h2>
+    </header>
+
+    <section id="objectif">
+        <h2>Objectif du Projet</h2>
+        <p>Ce projet consiste à concevoir, créer et alimenter une base de données pour stocker des informations sur la fréquence des catastrophes climatiques.</p>
+    </section>
+
+    <section id="taches">
+        <h2>Travail Demandé</h2>
+
+        <h3>1. Script manuel de création de la base de données</h3>
+        <p>Créer un script SQL pour générer la structure de la base de données en suivant le modèle relationnel.</p>
+
+        <h3>2. Modélisation et script de création avec AGL</h3>
+        <p>Réaliser un modèle physique de données avec un Atelier de Génie Logiciel (AGL) et générer automatiquement le script SQL correspondant.</p>
+
+        <h3>3. Peuplement des tables</h3>
+        <p>Écrire un script SQL pour insérer des données à partir de fichiers CSV fournis.</p>
+    </section>
+
+    <section id="ressources">
+        <h2>Ressources</h2>
+        <ul>
+            <li><a href="https://www.postgresql.org/download/">Télécharger PostgreSQL</a></li>
+            <li><a href="https://www.mysql.com/products/workbench/">MySQL Workbench</a></li>
+            <li><a href="https://dbmstools.com/tools/sql-power-architect">SQL Power Architect</a></li>
+        </ul>
+    </section>
+
+
+    <section id="code-section">
+        <h2>Exemple de Code SQL</h2>
+        <p>Voici un exemple de script SQL pour créer une table :</p>
+        <pre><code>
+            CREATE TABLE fichier_csv (
+                country VARCHAR(100),
+                iso2 VARCHAR(2),
+                iso3 VARCHAR(3),
+                region_code INTEGER,
+                region VARCHAR(100),
+                sub_region_code INTEGER,
+                sub_region VARCHAR(100),
+                disaster VARCHAR(100),
+                year INTEGER,
+                number INTEGER
+            );
+             
+            \copy fichier_csv (country, iso2, iso3, region_code, region, sub_region_code, sub_region, disaster, year, number)
+            FROM '/home/laroub/FICHIER_DISASTER/Climate_related_disasters_frequency.csv'
+            DELIMITER ','
+            CSV HEADER;
+            
+            Script de peuplement de la base de données :
+            
+            INSERT INTO region (region_code, name)
+            SELECT DISTINCT region_code, region
+            FROM fichier_csv;
+            
+            INSERT INTO sub_region (sub_region_code, name, region_code)
+            SELECT DISTINCT sub_region_code, sub_region, region_code
+            FROM fichier_csv;
+            
+            INSERT INTO country (name, ISO2, ISO3, sub_region_code)
+            SELECT DISTINCT country, iso2, iso3, sub_region_code
+            FROM fichier_csv;
+            
+            INSERT INTO disaster (disaster)
+            SELECT DISTINCT disaster
+            FROM fichier_csv;
+            
+            INSERT INTO climate_disaster (country_code, disaster_code, year, number)
+            SELECT DISTINCT country.country_code, disaster.disaster_code, fichier_csv.year,fichier_csv.number
+            FROM fichier_csv
+            JOIN country ON fichier_csv.iso3 = country.iso3
+            JOIN disaster ON fichier_csv.disaster = disaster.disaster;
+            
+        </code></pre>
+    </section>
+    
+    
+
+    <footer>
+        <p>Projet réalisé dans le cadre d'une SAE</p>
+    </footer>
+</body>
+</html>
